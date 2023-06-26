@@ -1,0 +1,83 @@
+CRITICAL - 2023-06-20 00:40:13 --> Invalid file: "admin/produk/index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/produk/index.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/produk/index', [], true)
+ 3 APPPATH\Controllers\admin\ProductController.php(15): view('admin/produk/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\admin\ProductController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\ProductController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-20 00:47:17 --> Undefined property: App\Controllers\admin\ProductController::$category
+in APPPATH\Controllers\admin\ProductController.php on line 14.
+ 1 APPPATH\Controllers\admin\ProductController.php(14): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\admin\\ProductController::$category', 'C:\\laragon\\www\\webdesa\\app\\Controllers\\admin\\ProductController.php', 14, [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\admin\ProductController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\ProductController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-20 00:47:49 --> mysqli_sql_exception: Table 'webdesa.categories' doesn't exist in C:\laragon\www\webdesa\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\webdesa\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\webdesa\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\webdesa\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\webdesa\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\webdesa\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\webdesa\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\webdesa\app\Controllers\admin\ProductController.php(14): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\webdesa\system\CodeIgniter.php(934): App\Controllers\admin\ProductController->index()
+#8 C:\laragon\www\webdesa\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\ProductController))
+#9 C:\laragon\www\webdesa\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\webdesa\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-20 00:47:49 --> Table 'webdesa.categories' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `categories`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `categories`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `categories`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `categories`', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\admin\ProductController.php(14): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\admin\ProductController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\ProductController))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-20 00:53:41 --> Undefined variable: category
+in APPPATH\Views\admin\product\index.php on line 9.
+ 1 APPPATH\Views\admin\product\index.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: category', 'C:\\laragon\\www\\webdesa\\app\\Views\\admin\\product\\index.php', 9, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\webdesa\\app\\Views\\admin\\product\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/product/index', [], true)
+ 5 APPPATH\Controllers\admin\ProductController.php(16): view('admin/product/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\admin\ProductController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-20 01:00:25 --> Undefined variable: title
+in APPPATH\Views\admin\dashboard\index.php on line 6.
+ 1 APPPATH\Views\admin\dashboard\index.php(6): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: title', 'C:\\laragon\\www\\webdesa\\app\\Views\\admin\\dashboard\\index.php', 6, [])
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\webdesa\\app\\Views\\admin\\dashboard\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dashboard/index', [], true)
+ 5 APPPATH\Controllers\admin\DashboardController.php(14): view('admin/dashboard/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\DashboardController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-20 08:42:16 --> Invalid file: "admin/layout/foote.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/layout/foote.php')
+ 2 SYSTEMPATH\View\View.php(431): CodeIgniter\View\View->render('admin/layout/foote', null, true)
+ 3 APPPATH\Views\admin\layout\main.php(31): CodeIgniter\View\View->include('admin/layout/foote')
+ 4 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\webdesa\\app\\Views\\admin\\layout\\main.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('admin/layout/main', [], true)
+ 7 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dashboard/index', [], true)
+ 8 APPPATH\Controllers\admin\DashboardController.php(15): view('admin/dashboard/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin\DashboardController->index()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

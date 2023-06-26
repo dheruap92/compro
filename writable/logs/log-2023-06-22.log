@@ -1,0 +1,29 @@
+CRITICAL - 2023-06-22 01:56:11 --> Invalid file: "layout/login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout/login.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('layout/login', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('layout/login')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-22 01:56:35 --> Invalid file: "homepage.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('homepage.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('homepage', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('homepage')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-22 02:09:28 --> Undefined variable: title
+in APPPATH\Views\homepage.php on line 8.
+ 1 APPPATH\Views\homepage.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: title', 'C:\\laragon\\www\\webdesa\\app\\Views\\homepage.php', 8, [])
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\laragon\\www\\webdesa\\app\\Views\\homepage.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('homepage', [], true)
+ 5 APPPATH\Controllers\Home.php(9): view('homepage')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
