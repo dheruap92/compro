@@ -31,12 +31,19 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-##### Product #####
-$routes->get('/product','Admin\ProductController::index');
 
-##### Product #####
-$routes->get('/dashboard','Admin\DashboardController::index');
+$routes->group('admin',['namespace'=>'App\Controllers\Admin'],static function($routes){
+    ##### Dashboard #####
+    $routes->get('dashboard','DashboardController::index');
 
+    ##### Product #####
+    $routes->get('product','ProductController::index');
+
+    ##### Category #####
+    $routes->get('category','CategoryController::index');
+    $routes->get('category/create','CategoryController::create');
+    $routes->post('category','CategoryController::store');
+});
 
 /*
  * --------------------------------------------------------------------
