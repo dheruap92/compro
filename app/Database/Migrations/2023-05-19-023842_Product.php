@@ -23,6 +23,10 @@ class Product extends Migration
                 'type' => 'varchar',
                 'constraint' => '100'
             ],
+            'slug' => [
+                'type' => 'varchar',
+                'constraint' => '100'
+            ],
             'created_at' => [
                 'type' => 'datetime'
             ],

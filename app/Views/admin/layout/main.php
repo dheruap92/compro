@@ -42,6 +42,7 @@
     <!-- Tabler Core -->
     <script src="<?= base_url() ?>tabler/dist/js/tabler.min.js?1684106062" defer></script>
     <script src="<?= base_url() ?>tabler/dist/js/demo.min.js?1684106062" defer></script>
-      <?= $this->renderSection("js") ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <?= $this->renderSection("js") ?>
   </body>
 </html>

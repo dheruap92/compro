@@ -19,7 +19,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-// $routes->setAutoRoute(false);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -32,7 +32,10 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 
-$routes->group('admin',['namespace'=>'App\Controllers\Admin'],static function($routes){
+$routes->group('',['namespace'=>'App\Controllers\Admin'],static function($routes){
+
+    $routes->get('admin','DashboardController::index');
+
     ##### Dashboard #####
     $routes->get('dashboard','DashboardController::index');
 
@@ -40,9 +43,24 @@ $routes->group('admin',['namespace'=>'App\Controllers\Admin'],static function($r
     $routes->get('product','ProductController::index');
 
     ##### Category #####
-    $routes->get('category','CategoryController::index');
-    $routes->get('category/create','CategoryController::create');
-    $routes->post('category','CategoryController::store');
+    $routes->group('category',['namespace'=>'App\Controllers\Admin'],static function($routes){
+        $routes->get('','CategoryController::index');
+        $routes->post('','CategoryController::store');
+        $routes->get('(:num)','CategoryController::edit/$1');
+        $routes->get('create','CategoryController::create');
+        $routes->delete('(:num)','CategoryController::delete/$1');
+        $routes->put('(:num)','CategoryController::update/$1');
+    });
+
+     ##### Menu #####
+     $routes->group('menu',['namespace'=>'App\Controllers\Admin'],static function($routes){
+        $routes->get('','MenuController::index');
+        $routes->post('','MenuController::store');
+        $routes->get('(:num)','MenuController::edit/$1');
+        $routes->get('create','MenuController::create');
+        $routes->delete('(:num)','MenuController::delete/$1');
+        $routes->put('(:num)','MenuController::update/$1');
+    });
 });
 
 /*

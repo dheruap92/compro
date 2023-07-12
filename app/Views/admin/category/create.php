@@ -35,11 +35,7 @@
                         <?= form_open('category') ?>
                             <?= csrf_field() ?>
                             <div class="card-body">
-                                <?php if (session('success')) { ?>
-                                <div class="alert alert-success" role="alert">
-                                    Data Berhasil di Tambahkan
-                                </div>
-                                <?php } ?>
+                                <?= view_cell('AlertMessage::show',[]) ?>
                                 <div class="mb-3 row">
                                     <label class="col-3 col-form-label required">Category Name</label>
                                     <div class="col">
@@ -48,6 +44,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-end">
+                                <a href="<?= site_url("category")?>"  class="btn btn-default">Back</a>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                         <?= form_close() ?>

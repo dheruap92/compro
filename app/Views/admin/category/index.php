@@ -28,41 +28,54 @@
     <!-- Page body -->
     <div class="page-body">
         <div class="container-xl">
-            <div class="row row-deck row-cards">
-                <div class="col-12">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-end">
-                        <a href="<?= base_url("category/create") ?>" class="btn btn-success"> Tambah </a>
-                    </div>
-                    <div class="card-body">
-                        <?php var_dump($list) ?>
+            <div class="row row-cards">
+                <div class="col-md-12">
+                <?= view_cell('AlertMessage::show',[]) ?>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-start">
+                            <a href="<?= base_url("category/create") ?>" class="btn btn-success"> Tambah </a>
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-vcenter card-table table-striped">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Category Name</th>
-                                    <th>Aksi</th>
+                                    <th class="w-20">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 1; foreach ($list as $r) : ?>
+                                <?php
+                                $page = isset($_GET['page_category'])?$_GET['page_category']:1;
+                                $no = 1 + (10*($page-1)) ; foreach ($list as $r) : ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
                                         <td><?= $r->name ?></td>
                                         <td>
-                                            <button type="button" class="btn btn-sm">Edit</button> 
-                                            <button type="button" class="btn btn-sm">Hapus</button>
+                                            <div class="d-flex">
+                                                <a href="<?= site_url("category/$r->category_id") ?>" type="button" class="btn btn-sm mx-20">Edit</a>
+                                                <div class="mx-1"></div>
+                                                <form action="<?= site_url("category/$r->category_id") ?>" method="POST">
+                                                    <input type="hidden" name="_method" value="delete">
+                                                    <button type="submit" class="btn btn-sm">Hapus</button>
+                                                </form>
+                                            </div>
+                                            
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                             </table>
                         </div>
+                        <div class="card-footer d-flex align-items-center">
+                            <?= $list_pager->links('category', 'tabler_template') ?>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
     </div>
 <?php $this->endSection() ?>
+
