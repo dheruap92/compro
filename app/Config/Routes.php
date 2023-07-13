@@ -32,7 +32,7 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'Home::index');
 
 
-$routes->group('',['namespace'=>'App\Controllers\Admin'],static function($routes){
+$routes->group('',['namespace'=>'App\Controllers\Admin',"filter"=>"login"],static function($routes){
 
     $routes->get('admin','DashboardController::index');
 

@@ -25,6 +25,9 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'authenticate' => Authenticate::class,
         'redirectIfAuthenticated' => Authenticated::class,
+        'login'      => \Myth\Auth\Filters\LoginFilter::class,
+        'role'       => \Myth\Auth\Filters\RoleFilter::class,
+        'permission' => \Myth\Auth\Filters\PermissionFilter::class,
     ];
 
     /**
@@ -64,5 +67,6 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public array $filters = [
+    ];
 }

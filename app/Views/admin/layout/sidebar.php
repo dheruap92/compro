@@ -132,8 +132,8 @@
                 <a href="<?= base_url() ?>tabler/profile.html" class="dropdown-item">Profile</a>
                 <a href="#" class="dropdown-item">Feedback</a>
                 <div class="dropdown-divider"></div>
-                    <a href="<?= base_url() ?>tabler/settings.html" class="dropdown-item">Settings</a>
-                    <a href="<?= base_url() ?>tabler/sign-in.html" class="dropdown-item">Logout</a>
+                    <a href="<?= base_url() ?>" class="dropdown-item">Settings</a>
+                    <a href="<?= base_url("logout") ?>" class="dropdown-item">Logout</a>
                 </div>
             </div>
         </div>
