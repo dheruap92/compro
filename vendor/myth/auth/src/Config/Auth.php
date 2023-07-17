@@ -74,7 +74,7 @@ class Auth extends BaseConfig
      * @var array
      */
     public $views = [
-        'login'           => 'admin\layout\login',
+        'login'           => 'admin\layout\auth\login',
         'register'        => 'Myth\Auth\Views\register',
         'forgot'          => 'Myth\Auth\Views\forgot',
         'reset'           => 'Myth\Auth\Views\reset',
@@ -224,7 +224,7 @@ class Auth extends BaseConfig
      *
      * @var bool
      */
-    public $allowRemembering = false;
+    public $allowRemembering = true;
 
     /**
      * --------------------------------------------------------------------
