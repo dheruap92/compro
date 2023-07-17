@@ -26,12 +26,12 @@
     <script src="<?= base_url() ?>tabler/dist/js/demo-theme.min.js?1684106062"></script>
     <div class="page">
       <!-- Sidebar -->
-      <?= $this->include('admin/layout/sidebar') ?>
+      <?= $this->include('admin/layout/_sidebar') ?>
       <!-- Navbar -->
-      <?= $this->include('admin/layout/navbar') ?>
+      <?= $this->include('admin/layout/_navbar') ?>
       <div class="page-wrapper">
         <?= $this->renderSection("content") ?>
-        <?= $this->include("admin/layout/footer") ?>
+        <?= $this->include("admin/layout/_footer") ?>
       </div>
     </div>
     <!-- Libs JS -->

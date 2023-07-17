@@ -32,7 +32,7 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'Home::index');
 
 
-$routes->group('',['namespace'=>'App\Controllers\Admin'],static function($routes){
+$routes->group('',['namespace'=>'App\Controllers\Admin',"filter"=>"login"],static function($routes){
 
     $routes->get('admin','DashboardController::index');
 
@@ -60,6 +60,16 @@ $routes->group('',['namespace'=>'App\Controllers\Admin'],static function($routes
         $routes->get('create','MenuController::create');
         $routes->delete('(:num)','MenuController::delete/$1');
         $routes->put('(:num)','MenuController::update/$1');
+    });
+
+     ##### User #####
+     $routes->group('user',['namespace'=>'App\Controllers\Admin'],static function($routes){
+        $routes->get('','UserController::index');
+        $routes->post('','UserController::store');
+        $routes->get('(:num)','UserController::edit/$1');
+        $routes->get('create','UserController::create');
+        $routes->delete('(:num)','UserController::delete/$1');
+        $routes->put('(:num)','UserController::update/$1');
     });
 });
 
